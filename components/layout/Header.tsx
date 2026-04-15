@@ -11,7 +11,7 @@ const Header = () => {
     ];
 
     return (
-        <header className='fixed top-10 left-0 right-0 flex items-center justify-center'>
+        <header className='fixed top-10 w-full flex items-center justify-center z-20'>
             <nav className='flex items-center gap-2 px-4 py-2 bg-white/5 backdrop-blur-md border border-white/10 rounded-full shadow-2xl'>
                 {navItems.map((item) => (
                     <Link key={item.name} href={item.href} className="relative group">

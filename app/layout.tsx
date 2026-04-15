@@ -1,23 +1,22 @@
 import type { Metadata } from "next";
-import { Geist, Geist_Mono, Inter, Syne } from "next/font/google";
+import { Geist, Geist_Mono, Inter, Plus_Jakarta_Sans, Syne } from "next/font/google";
 import "./globals.css";
 
-// Font cho tiêu đề và tên (Syne)
-const syne = Syne({
-  variable: "--font-syne",
+// Font Sans-serif hiện đại cho toàn bộ nội dung
+const geistSans = Geist({
+  variable: "--font-geist-sans",
   subsets: ["latin"],
-  weight: ["400", "700", "800"], // Chọn các weight cần thiết
 });
 
-// Font cho nội dung phụ và menu (Inter)
-const inter = Inter({
-  variable: "--font-inter",
+// Font Mono cho các phần mang tính "code" hoặc số liệu kỹ thuật
+const geistMono = Geist_Mono({
+  variable: "--font-geist-mono",
   subsets: ["latin"],
 });
 
 export const metadata: Metadata = {
   title: "Trang Si Ban | Frontend Engineer",
-  description: "Creative Frontend Developer Portfolio",
+  description: "Results-driven Frontend Engineer with 2 years of experience specializing in React and TypeScript. [cite: 3]",
 };
 
 export default function RootLayout({
@@ -28,7 +27,7 @@ export default function RootLayout({
   return (
     <html
       lang="en"
-      className={`${syne.variable} ${inter.variable} h-full antialiased`}
+      className={`${geistSans.variable} ${geistMono.variable} h-full antialiased`}
     >
       <body className="min-h-full flex flex-col">{children}</body>
     </html>
