@@ -2,7 +2,9 @@ import Header from '@/components/layout/Header'
 import { Button } from '@/components/ui/button'
 import Footer from '@/components/ui/footer/Footer'
 import Github from '@/components/ui/Github'
+import { TooltipProvider } from '@/components/ui/tooltip'
 import React from 'react'
+
 
 const layout = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -15,7 +17,7 @@ const layout = ({ children }: { children: React.ReactNode }) => {
 
             <main className="flex-1 overflow-y-auto pb-8 custom-scrollbar bg-black">
                 <div className="">
-                    {children}
+                    <TooltipProvider>{children}</TooltipProvider>
                 </div>
             </main>
 

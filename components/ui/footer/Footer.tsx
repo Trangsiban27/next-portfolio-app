@@ -73,6 +73,7 @@ const Footer = () => {
                     <div className='mt-2 flex flex-col gap-y-6 items-start justify-start'>
                         {social?.map((item: any, index) => (
                             <motion.div
+                                key={index}
                                 {...fadeInUp}
                                 transition={{ duration: 0.6, delay: index * 0.1 }}
                                 className='flex items-center gap-2 underline cursor-pointer'

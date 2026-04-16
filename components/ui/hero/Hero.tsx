@@ -13,6 +13,10 @@ const Hero = () => {
 
     return (
         <section className="relative h-screen w-full overflow-hidden z-10">
+            {/* <div className='w-40 absolute -top-15 left-10'>
+                <img src="/bean_logo.png" alt="logo" className='w-full object-cover' />
+            </div> */}
+
             <div className="absolute inset-0 -z-10">
                 <video
                     src="/hero-video.mp4"
