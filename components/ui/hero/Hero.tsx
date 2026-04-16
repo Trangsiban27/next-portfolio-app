@@ -1,7 +1,16 @@
+'use client'
 import TextWrapHero from '@/components/common/TextWrapHero'
 import React from 'react'
+import { motion } from 'framer-motion'
 
 const Hero = () => {
+
+    const fadeInUp = {
+        initial: { opacity: 0, y: 30 },
+        whileInView: { opacity: 1, y: 0 },
+        viewport: { once: true }
+    }
+
     return (
         <section className="relative h-screen w-full overflow-hidden z-10">
             <div className="absolute inset-0 -z-10">
@@ -19,13 +28,21 @@ const Hero = () => {
 
             {/* Nội dung trên Video */}
             <div className="absolute z-10 flex h-full flex-col items-start justify-center text-white left-15">
-                <h1 className="text-xs md:text-sm font-light tracking-[0.4em] uppercase text-white mb-3">
+                <motion.h1
+                    {...fadeInUp}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-xs md:text-xl font-light text-white mb-3"
+                >
                     Hello! I'm
-                </h1>
+                </motion.h1>
 
-                <h2 className="text-5xl md:text-7xl font-extrabold bg-linear-to-r from-[#A855F7] to-[#6366F1] bg-clip-text text-transparent tracking-tighter">
+                <motion.h2
+                    {...fadeInUp}
+                    transition={{ duration: 0.6, delay: 0.2 }}
+                    className="text-5xl md:text-7xl font-extrabold bg-linear-to-r from-[#A855F7] to-[#6366F1] bg-clip-text text-transparent tracking-tighter"
+                >
                     Trang Si Ban
-                </h2>
+                </motion.h2>
             </div>
 
             <div className="absolute z-10 flex h-full flex-col items-start justify-center text-white right-15 gap-y-2">

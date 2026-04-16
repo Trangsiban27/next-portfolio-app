@@ -1,5 +1,6 @@
 import Header from '@/components/layout/Header'
 import { Button } from '@/components/ui/button'
+import Footer from '@/components/ui/footer/Footer'
 import Github from '@/components/ui/Github'
 import React from 'react'
 
@@ -27,6 +28,8 @@ const layout = ({ children }: { children: React.ReactNode }) => {
                     <img src="/linkedin.webp" alt="linkedin-logo" className='w-full object-cover' />
                 </div>
             </div>
+
+            <Footer />
         </div>
     )
 }
