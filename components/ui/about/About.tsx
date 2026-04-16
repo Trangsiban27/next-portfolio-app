@@ -11,12 +11,12 @@ const About = () => {
     }
 
     return (
-        <section className='flex gap-12 my-12.5 px-20 h-screen items-center justify-center'>
-            <div className='w-1/2 flex items-end justify-center'>
+        <section className='flex flex-col md:flex-row lg:flex-row gap-12 md:my-12.5 my-22 px-8 md:px-20 h-screen items-center justify-center'>
+            <div className='w-full md:w-1/2 flex items-end justify-center'>
                 <motion.div
                     {...fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className='w-80 h-80 rounded-full overflow-hidden'
+                    className='md:w-80 md:h-80 w-60 h-60 rounded-full overflow-hidden'
                 >
                     <img src="/ban_avatar.jpg" alt="" className='w-full h-full object-cover' />
                 </motion.div>

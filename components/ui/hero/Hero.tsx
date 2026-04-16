@@ -31,7 +31,7 @@ const Hero = () => {
             </div>
 
             {/* Nội dung trên Video */}
-            <div className="absolute z-10 flex h-full flex-col items-start justify-center text-white left-15">
+            <div className="absolute z-10 flex h-full flex-col items-start justify-center text-white -top-40 left-10 md:left-15 lg:left-15">
                 <motion.h1
                     {...fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
@@ -49,7 +49,7 @@ const Hero = () => {
                 </motion.h2>
             </div>
 
-            <div className="absolute z-10 flex h-full flex-col items-start justify-center text-white right-15 gap-y-2">
+            <div className="absolute z-10 flex h-full flex-col items-start justify-center text-white md:right-15 lg:right-15 right-10 top-30 gap-y-2">
                 <h1 className="text-xs md:text-2xl">A Creative</h1>
                 <TextWrapHero />
             </div>

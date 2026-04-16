@@ -12,7 +12,7 @@ const RecommendItem = ({ data }: { data: any }) => {
     }
 
     return (
-        <div className='w-200 p-6 shadow-sm bg-white/5 backdrop-blur-md rounded-lg'>
+        <div className='md:w-200 p-6 shadow-sm bg-white/5 backdrop-blur-md rounded-lg'>
             <div className='flex items-center justify-between'>
 
 

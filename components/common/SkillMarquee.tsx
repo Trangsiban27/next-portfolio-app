@@ -57,14 +57,14 @@ const SkillMarquee = () => {
             </motion.div> */}
 
             <div className="overflow-hidden" ref={emblaRef}>
-                <div className="flex backface-hidden touch-pan-y -ml-2.5">
+                <div className="flex backface-hidden touch-pan-y md:-ml-2.5">
                     {skills.map((skill, index) => (
                         <div
                             key={index}
-                            className="flex-[0_0_auto] min-w-0 pl-2.5 flex items-center"
+                            className="flex-[0_0_auto] min-w-0 md:pl-2.5 flex items-center"
                         >
-                            <div className="px-10 flex items-center gap-10">
-                                <img src={skill} alt="" className='w-30 object-cover' />
+                            <div className="px-10 flex items-center md:gap-10 gap-4">
+                                <img src={skill} alt="" className='md:w-30 w-20 object-cover' />
                             </div>
                         </div>
                     ))}

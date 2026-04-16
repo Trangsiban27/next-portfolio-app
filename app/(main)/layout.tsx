@@ -1,12 +1,24 @@
+'use client'
 import Header from '@/components/layout/Header'
 import { Button } from '@/components/ui/button'
 import Footer from '@/components/ui/footer/Footer'
 import Github from '@/components/ui/Github'
 import { TooltipProvider } from '@/components/ui/tooltip'
+import { useRouter } from 'next/navigation'
 import React from 'react'
 
 
 const layout = ({ children }: { children: React.ReactNode }) => {
+    const router = useRouter()
+
+    const handleGithub = () => {
+        window.open('https://github.com/Trangsiban27', '_blank');
+    }
+
+    const handleLinkedin = () => {
+        window.open('https://www.linkedin.com/in/trangbandev/', '_blank');
+    }
+
     return (
         <div className='h-screen w-full relative '>
             <div className="fixed top-[-10%] left-[-5%] w-80 h-80 bg-purple-600/20 rounded-full blur-[120px] pointer-events-none z-0" />
@@ -22,11 +34,11 @@ const layout = ({ children }: { children: React.ReactNode }) => {
             </main>
 
             <div className='flex flex-col items-center gap-y-4 fixed bottom-5 left-5 z-10'>
-                <div className='cursor-pointer'>
+                <div className='cursor-pointer' onClick={handleGithub}>
                     <Github />
                 </div>
 
-                <div className='cursor-pointer w-18'>
+                <div className='cursor-pointer w-18' onClick={handleLinkedin}>
                     <img src="/linkedin.webp" alt="linkedin-logo" className='w-full object-cover' />
                 </div>
             </div>

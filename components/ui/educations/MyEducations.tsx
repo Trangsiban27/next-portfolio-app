@@ -11,26 +11,26 @@ const MyEducations = () => {
     }
 
     return (
-        <section className='w-full gap-12 my-12.5 px-20 h-screen'>
+        <section className='w-full gap-12 my-12.5 md:px-20 px-8 h-screen'>
             <motion.div
                 {...fadeInUp}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className='w-full flex items-center justify-center'
             >
-                <span className='text-8xl text-white font-bold'>My Educations</span>
+                <span className=' text-6xl md:text-8xl text-white font-bold'>My Educations</span>
             </motion.div>
 
-            <div className='flex w-full mt-22'>
+            <div className='flex flex-col md:flex-row w-full mt-22'>
                 <motion.div
                     {...fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className='w-1/2 relative'
+                    className='md:w-1/2 relative'
                 >
-                    <div className='w-80 rounded-lg overflow-hidden -rotate-6 hover:translate-1 transition-all duration-200'>
+                    <div className='md:w-80 rounded-lg overflow-hidden -rotate-6 hover:translate-1 transition-all duration-200'>
                         <img src="/education-1.jpg" alt="" />
                     </div>
 
-                    <div className='w-80 rounded-lg overflow-hidden rotate-6 absolute right-15 top-40 hover:-translate-1 transition-all duration-200 shadow-2xs'>
+                    <div className='md:w-80 rounded-lg overflow-hidden rotate-6 absolute md:right-15 md:top-40 top-55 hover:-translate-1 transition-all duration-200 shadow-2xs'>
                         <img src="/education-2.jpg" alt="" />
                     </div>
                 </motion.div>
@@ -38,7 +38,7 @@ const MyEducations = () => {
                 <motion.div
                     {...fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className='w-1/2 flex flex-col gap-4'
+                    className='md:w-1/2 flex flex-col gap-4 mt-70 md:mt-0'
                 >
                     <span className='text-purple-400 font-bold text-lg'>2021 - 2024</span>
 

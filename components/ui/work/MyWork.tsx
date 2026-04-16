@@ -12,18 +12,18 @@ const MyWork = () => {
     }
 
     return (
-        <section className='w-full gap-12 my-40 px-20'>
+        <section className='w-full gap-12 md:my-40 mt-180 sm:mt-220 md:px-20 px-8'>
             <motion.div
                 {...fadeInUp}
                 transition={{ duration: 0.6, delay: 0.2 }}
                 className='w-full flex flex-col items-center justify-center'
             >
-                <span className='text-8xl text-white font-bold'>My career &</span>
-                <span className='text-8xl text-white font-bold'>experience</span>
+                <span className='text-4xl md:text-8xl text-white font-bold'>My career &</span>
+                <span className='text-4xl md:text-8xl text-white font-bold'>experience</span>
             </motion.div>
 
-            <div className='w-full flex mt-26'>
-                <div className='w-1/2 flex justify-between border-r pr-12 border-purple-400'>
+            <div className='w-full flex flex-col md:flex-row mt-26'>
+                <div className='md:w-1/2 flex flex-col md:flex-row justify-between md:border-r md:pr-12 border-purple-400'>
                     <div className='flex flex-col'>
                         <motion.div
                             {...fadeInUp}
@@ -47,13 +47,13 @@ const MyWork = () => {
                     <motion.span
                         {...fadeInUp}
                         transition={{ duration: 0.6, delay: 0.2 }}
-                        className='text-white text-4xl font-bold'
+                        className='text-white text-4xl font-bold mt-4 md:mt-0'
                     >
                         2024
                     </motion.span>
                 </div>
 
-                <div className='w-1/2 flex justify-between pl-12'>
+                <div className='md:w-1/2 flex justify-between md:pl-12 mt-6 md:mt-0'>
                     <motion.p
                         className='text-white/60 text-xl '
                         {...fadeInUp}

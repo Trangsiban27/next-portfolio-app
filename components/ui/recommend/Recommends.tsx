@@ -13,14 +13,14 @@ const Recommends = () => {
     }
 
     return (
-        <section className='w-full gap-12 my-40 px-20'>
+        <section className='w-full gap-12 my-40 md:px-20 px-8'>
             <motion.div
                 {...fadeInUp}
                 transition={{ duration: 0.6, delay: 0.2 }}
-                className='w-full flex flex-col items-center justify-center'
+                className='w-full flex flex-col md:items-center justify-center'
             >
-                <span className='text-8xl text-white font-bold'>My Recommendations</span>
-                <span className='text-8xl text-white font-bold'>Via Linkedin</span>
+                <span className='text-4xl md:text-8xl text-white font-bold'>My Recommendations</span>
+                <span className='text-4xl md:text-8xl text-white font-bold'>Via Linkedin</span>
             </motion.div>
 
             <div className='mt-20'>

@@ -1,10 +1,12 @@
 'use client'
 import { ChevronDown } from 'lucide-react'
-import React from 'react'
+import React, { useEffect, useState } from 'react'
 import { motion } from 'framer-motion';
 import { span } from 'framer-motion/client';
 
 const WhatIDo = () => {
+    const [isMobile, setIsMobile] = useState(false);
+
     const fadeInUp = {
         initial: { opacity: 0, y: 30 },
         whileInView: { opacity: 1, y: 0 },
@@ -24,29 +26,39 @@ const WhatIDo = () => {
         }
     };
 
+    useEffect(() => {
+        const updateSize = () => {
+            setIsMobile(window.innerWidth < 1024);
+        };
+        window.addEventListener('resize', updateSize);
+        updateSize();
+        return () => window.removeEventListener('resize', updateSize);
+    }, [1024]);
+
     return (
-        <section className='flex gap-12 my-12.5 px-20 h-screen items-center justify-center'>
+        <section className='flex flex-col md:flex-row gap-12 my-12.5 md:px-20 px-8 h-screen items-center justify-center'>
             <div className='w-1/2 flex flex-col items-end'>
                 <motion.span
                     {...fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className='text-9xl text-white font-extrabold'
+                    className='md:text-9xl text-6xl text-white font-extrabold'
                 >
                     WHAT
                 </motion.span>
                 <motion.div
                     {...fadeInUp}
                     transition={{ duration: 0.6, delay: 0.2 }}
-                    className='flex gap-12'
+                    className='flex md:gap-12 gap-6'
                 >
-                    <span className='text-9xl font-extrabold text-white'>I</span>
-                    <span className='text-9xl font-extrabold bg-linear-to-r from-[#A855F7] to-[#6366F1] bg-clip-text text-transparent'>DO</span>
+                    <span className='md:text-9xl text-6xl font-extrabold text-white'>I</span>
+                    <span className='md:text-9xl text-6xl font-extrabold bg-linear-to-r from-[#A855F7] to-[#6366F1] bg-clip-text text-transparent'>DO</span>
                 </motion.div>
             </div>
 
             <motion.div
                 initial="initial"
                 whileHover="hover"
+                whileInView={isMobile ? "hover" : undefined}
                 variants={containerVariants}
                 className="relative p-10 flex flex-col justify-center bg-black cursor-pointer group overflow-hidden"
             >
@@ -73,7 +85,7 @@ const WhatIDo = () => {
                         initial: { opacity: 0, height: 0 },
                         hover: { opacity: 1, height: 160, marginTop: 24 }
                     }}
-                    className="relative z-10 overflow-hidden"
+                    className="relative z-10 overflow-hidden overflow-y-auto md:overflow-y-hidden"
                 >
                     <span className='text-white font-mono text-xs uppercase tracking-widest opacity-50'>
                         Skillset & Tools
@@ -91,7 +103,7 @@ const WhatIDo = () => {
                     </div>
                 </motion.div>
 
-                <div className='absolute bottom-10 right-10 border p-2'>
+                <div className='absolute bottom-10 right-10 border p-2 md:block hidden'>
                     <ChevronDown color='white' />
                 </div>
             </motion.div>
