@@ -4,6 +4,7 @@ import { MoveUpRight } from 'lucide-react'
 import { useRouter } from 'next/router'
 import React from 'react'
 import { motion } from 'framer-motion'
+import { toast } from 'sonner'
 
 const Footer = () => {
     const social = ['Github', 'Linkedin']
@@ -24,69 +25,26 @@ const Footer = () => {
                 window.open('https://www.linkedin.com/in/trangbandev/', '_blank');
                 break;
             }
+            case 'Email': {
+                navigator.clipboard.writeText('trangsibanwork@gmail.com')
+                toast.success('Copied email to clipboard!');
+                window.open('mailto:trangbandev@gmail.com');
+                break;
+            }
         }
     }
 
     return (
-        <div className='md:pb-40 pb-60 bg-black md:px-40 px-8 flex flex-col'>
-            <motion.div
-                {...fadeInUp}
-                transition={{ duration: 0.6, delay: 0.2 }}
-            >
-                <h1 className='text-5xl bg-linear-to-r from-[#A855F7] to-[#6366F1] bg-clip-text text-transparent'>CONTACT</h1>
-            </motion.div>
+        <div className='md:px-60 px-10 py-20 md:gap-0 gap-6 bg-[#101727] flex flex-col md:flex-row md:items-center items-start justify-between w-full'>
+            <div className='flex flex-col gap-2'>
+                <span className='text-white font-bold text-6xl'>Trang Si Ban</span>
+                <span className='text-gray-400 text-sm'>2026 Trang Si Ban. Build with precision</span>
+            </div>
 
-            <div className='flex flex-col md:flex-row mt-6 gap-y-8 md:gap-y-0'>
-                <div className='w-1/3 text-white flex flex-col items-start'>
-                    <motion.div
-                        {...fadeInUp}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className='flex flex-col mt-2'
-                    >
-                        <span className='text-white/60 font-bold'>Email</span>
-                        <span className='text-lg font-bold'>
-                            trangsibanwork@gmail.com
-                        </span>
-                    </motion.div>
-
-                    <motion.div
-                        {...fadeInUp}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className='flex flex-col mt-6'
-                    >
-                        <span className='text-white/60 font-bold'>Location</span>
-                        <span className='text-lg font-bold'>
-                            Ho Chi Minh city, VietNam
-                        </span>
-                    </motion.div>
-                </div>
-
-                <div className='w-1/3 text-white flex flex-col md:items-center'>
-                    <motion.span
-                        {...fadeInUp}
-                        transition={{ duration: 0.6, delay: 0.2 }}
-                        className='text-white/60 font-bold'
-                    >
-                        Social
-                    </motion.span>
-
-                    <div className='mt-2 flex flex-col gap-y-6 md:items-start md:justify-start'>
-                        {social?.map((item: any, index) => (
-                            <motion.div
-                                key={index}
-                                {...fadeInUp}
-                                transition={{ duration: 0.6, delay: index * 0.1 }}
-                                className='flex items-center gap-2 underline cursor-pointer'
-                                onClick={() => handleClick(item)}
-                            >
-                                <span className='text-white text-3xl'>{item}</span>
-                                <div>
-                                    <MoveUpRight color='white' size={20} />
-                                </div>
-                            </motion.div>
-                        ))}
-                    </div>
-                </div>
+            <div className='flex gap-8'>
+                <div className='text-white hover:cursor-pointer hover:underline' onClick={() => handleClick('Github')}>Github</div>
+                <div className='text-white hover:cursor-pointer hover:underline' onClick={() => handleClick('Linkedin')}>Linkedin</div>
+                <div className='text-white hover:cursor-pointer hover:underline' onClick={() => handleClick('Email')}>Email</div>
             </div>
         </div>
     )
